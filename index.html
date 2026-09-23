@@ -1,17 +1,1772 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>RIDWAN JagoNya Laptop Second | Diagnostik & Spesifikasi</title>
-	<style>
-		:root{--dark:#101c35;--blue:#2868f5;--light:#eef4ff;--text:#17233d;--muted:#68758b}*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;color:var(--text);background:#f8faff}header{background:var(--dark);color:#fff}.container{max-width:1100px;margin:auto;padding:0 24px}.nav{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:800;font-size:18px}.brand b{color:#79a2ff}.links{display:flex;gap:26px;align-items:center;font-size:14px}.links a{color:#d7e0f2;text-decoration:none}.links .button{color:var(--dark)}.button{display:inline-block;background:#fff;padding:12px 18px;border-radius:8px;font-weight:bold;text-decoration:none;color:var(--dark)}.hero{background:var(--dark);color:#fff;padding:70px 0 90px}.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}.label{color:#8eafff;text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:bold}.hero h1{font-size:clamp(38px,5vw,62px);line-height:1.05;margin:18px 0}.hero h1 span{color:#79a2ff}.hero p{color:#cbd5e8;line-height:1.7;max-width:500px}.actions{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}.primary{background:var(--blue);color:#fff}.outline{background:transparent;border:1px solid #596882;color:#fff}.panel{background:#fff;color:var(--text);border-radius:18px;padding:28px;box-shadow:0 20px 45px #07132e88}.panel-head{display:flex;justify-content:space-between;border-bottom:1px solid #e4e9f1;padding-bottom:15px;font-size:12px;color:var(--muted)}.score{display:flex;align-items:center;gap:18px;margin:24px 0}.circle{width:78px;height:78px;border:8px solid #d8f1e5;border-top-color:#18a76b;border-radius:50%;display:grid;place-items:center;font-weight:bold;color:#15935d}.bar{height:9px;background:#e8edf5;border-radius:10px;margin:10px 0 22px}.bar i{display:block;width:84%;height:100%;background:#18a76b;border-radius:inherit}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.stat{border:1px solid #e5eaf2;border-radius:9px;padding:13px}.stat strong{display:block;font-size:18px}.stat small{color:var(--muted)}main{padding:70px 0}.intro{text-align:center;max-width:620px;margin:0 auto 38px}.intro h2{font-size:32px;margin:12px 0}.intro p,.card p,.step p{color:var(--muted);line-height:1.6}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#fff;border:1px solid #e3e9f2;border-radius:14px;padding:25px}.icon{font-size:25px;color:var(--blue);background:var(--light);width:46px;height:46px;border-radius:12px;display:grid;place-items:center}.card h3{margin-bottom:8px}.card p{font-size:14px}.steps{margin-top:65px;background:var(--light);border-radius:18px;padding:35px}.steps h2{text-align:center}.step-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;text-align:center}.number{margin:auto auto 12px;background:var(--blue);color:#fff;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-weight:bold}.step p{font-size:13px}.banner{margin-top:60px;background:var(--blue);color:#fff;border-radius:15px;padding:30px 35px;display:flex;justify-content:space-between;align-items:center}.banner h2{margin:0 0 7px}.banner p{margin:0;color:#dbe6ff}footer{border-top:1px solid #e2e8f0;padding:24px 0;color:var(--muted);font-size:13px}@media(max-width:750px){.links a:not(.button){display:none}.hero-grid,.cards,.step-grid{grid-template-columns:1fr}.hero{padding:50px 0 65px}.steps{padding:25px 18px}.banner{display:block}.banner .button{margin-top:18px}}
-	</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RIDWAN JagoNya Laptop Second - Cek Unit</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f5f7fa;
+    color:#172033;
+}
+
+header{
+    background:#111827;
+    color:white;
+    padding:18px;
+    position:sticky;
+    top:0;
+    z-index:20;
+}
+
+.header-inner{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+}
+
+.brand{
+    font-size:20px;
+    font-weight:800;
+}
+
+.brand small{
+    display:block;
+    font-size:11px;
+    font-weight:400;
+    opacity:.7;
+    margin-top:3px;
+}
+
+main{
+    max-width:1100px;
+    margin:auto;
+    padding:25px 15px 60px;
+}
+
+.step{
+    display:none;
+}
+
+.step.active{
+    display:block;
+}
+
+.hero{
+    background:white;
+    border-radius:20px;
+    padding:35px 25px;
+    text-align:center;
+    box-shadow:0 8px 30px rgba(0,0,0,.06);
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    color:#667085;
+}
+
+.card{
+    background:white;
+    border-radius:16px;
+    padding:22px;
+    margin-bottom:18px;
+    box-shadow:0 5px 20px rgba(0,0,0,.05);
+}
+
+.card h2{
+    font-size:20px;
+    margin-bottom:18px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.field{
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+}
+
+.field label{
+    font-size:13px;
+    font-weight:700;
+}
+
+.field input,
+.field textarea,
+.field select{
+    width:100%;
+    border:1px solid #d0d5dd;
+    border-radius:10px;
+    padding:12px;
+    font-size:14px;
+    outline:none;
+}
+
+.field input:focus,
+.field textarea:focus{
+    border-color:#2563eb;
+}
+
+.btn{
+    border:none;
+    border-radius:11px;
+    padding:13px 18px;
+    font-size:14px;
+    font-weight:700;
+    cursor:pointer;
+}
+
+.btn-primary{
+    background:#2563eb;
+    color:white;
+}
+
+.btn-secondary{
+    background:#eef2f7;
+    color:#172033;
+}
+
+.btn-danger{
+    background:#dc2626;
+    color:white;
+}
+
+.btn-success{
+    background:#16a34a;
+    color:white;
+}
+
+.btn-large{
+    width:100%;
+    padding:17px;
+    font-size:16px;
+}
+
+.actions{
+    display:flex;
+    gap:10px;
+    margin-top:20px;
+    flex-wrap:wrap;
+}
+
+.progress{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    margin-bottom:25px;
+}
+
+.progress-item{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    color:#98a2b3;
+    font-size:13px;
+    font-weight:700;
+}
+
+.progress-item.active{
+    color:#2563eb;
+}
+
+.progress-item.done{
+    color:#16a34a;
+}
+
+.progress-line{
+    width:35px;
+    height:2px;
+    background:#d0d5dd;
+}
+
+.test-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.test-card{
+    background:white;
+    border:1px solid #eaecf0;
+    border-radius:15px;
+    padding:18px;
+}
+
+.test-card h3{
+    margin-bottom:8px;
+}
+
+.test-card p{
+    color:#667085;
+    font-size:13px;
+    min-height:35px;
+}
+
+.status{
+    display:inline-block;
+    padding:5px 9px;
+    border-radius:20px;
+    font-size:11px;
+    font-weight:800;
+    margin-top:12px;
+}
+
+.status-pending{
+    background:#f2f4f7;
+    color:#667085;
+}
+
+.status-checking{
+    background:#eff8ff;
+    color:#175cd3;
+}
+
+.status-normal{
+    background:#ecfdf3;
+    color:#027a48;
+}
+
+.status-manual{
+    background:#fffaeb;
+    color:#b54708;
+}
+
+.status-error{
+    background:#fef3f2;
+    color:#b42318;
+}
+
+.status-unsupported{
+    background:#f2f4f7;
+    color:#475467;
+}
+
+.result-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    padding:13px 0;
+    border-bottom:1px solid #eaecf0;
+}
+
+.result-row:last-child{
+    border-bottom:none;
+}
+
+.result-name{
+    font-weight:700;
+}
+
+.result-value{
+    text-align:right;
+    color:#667085;
+}
+
+.big-status{
+    text-align:center;
+    padding:25px;
+    border-radius:15px;
+    background:#f8fafc;
+    margin-bottom:20px;
+}
+
+.big-status strong{
+    display:block;
+    font-size:30px;
+    margin-bottom:5px;
+}
+
+.notice{
+    padding:13px 15px;
+    border-radius:10px;
+    background:#eff8ff;
+    color:#175cd3;
+    font-size:13px;
+    margin-bottom:15px;
+}
+
+.keyboard{
+    display:grid;
+    grid-template-columns:repeat(15,1fr);
+    gap:5px;
+    margin-top:15px;
+}
+
+.key{
+    padding:10px 4px;
+    background:#f2f4f7;
+    border:1px solid #d0d5dd;
+    border-radius:6px;
+    text-align:center;
+    font-size:11px;
+}
+
+.key.active{
+    background:#16a34a;
+    color:white;
+    border-color:#16a34a;
+}
+
+.color-test{
+    width:100%;
+    height:220px;
+    border-radius:12px;
+    background:#000;
+    margin:15px 0;
+    border:1px solid #ddd;
+}
+
+.color-buttons{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:7px;
+}
+
+.color-buttons button{
+    padding:10px 5px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    background:white;
+    cursor:pointer;
+}
+
+.camera{
+    width:100%;
+    max-height:400px;
+    background:#000;
+    border-radius:12px;
+    object-fit:cover;
+}
+
+.summary-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+}
+
+.summary-box{
+    background:white;
+    border-radius:14px;
+    padding:18px;
+    text-align:center;
+    border:1px solid #eaecf0;
+}
+
+.summary-box strong{
+    display:block;
+    font-size:26px;
+}
+
+footer{
+    text-align:center;
+    color:#667085;
+    font-size:12px;
+    padding:30px;
+}
+
+@media(max-width:700px){
+
+    .grid,
+    .test-grid{
+        grid-template-columns:1fr;
+    }
+
+    .summary-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .hero h1{
+        font-size:26px;
+    }
+
+    .keyboard{
+        grid-template-columns:repeat(10,1fr);
+    }
+
+    .color-buttons{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .progress-item span{
+        display:none;
+    }
+}
+
+@media print{
+
+    header,
+    .progress,
+    .actions,
+    footer,
+    button{
+        display:none!important;
+    }
+
+    body{
+        background:white;
+    }
+
+    .step{
+        display:none!important;
+    }
+
+    #step-result{
+        display:block!important;
+    }
+
+    .card{
+        box-shadow:none;
+        border:1px solid #ddd;
+    }
+}
+</style>
 </head>
+
 <body>
-	<header><div class="container nav"><div class="brand">RIDWAN <b>JagoNya</b></div><nav class="links"><a href="#fitur">Fitur</a><a href="#cara">Cara Kerja</a><a class="button" href="#mulai">Mulai Diagnostik</a></nav></div></header>
-	<section class="hero"><div class="container hero-grid"><div><div class="label">Pusat Diagnostik Laptop Second</div><h1>Kenali laptopmu.<br><span>Beli dengan yakin.</span></h1><p>Periksa kondisi laptop second secara menyeluruh dan dapatkan penilaian objektif sebelum membeli atau menjual.</p><div class="actions"><a class="button primary" href="#mulai">Mulai Pemeriksaan →</a><a class="button outline" href="#fitur">Pelajari Fitur</a></div></div><div class="panel"><div class="panel-head"><b>HASIL DIAGNOSTIK</b><span>Baru saja</span></div><div class="score"><div class="circle">82</div><div><b>Kondisi Sangat Baik</b><br><small>Rekomendasi: Layak dibeli</small></div></div><small>Kesehatan komponen</small><div class="bar"><i></i></div><div class="stats"><div class="stat"><strong>94%</strong><small>Baterai</small></div><div class="stat"><strong>86%</strong><small>Performa</small></div><div class="stat"><strong>78%</strong><small>Layar</small></div></div></div></div></section>
-	<main><div class="container" id="fitur"><div class="intro"><div class="label">Semua yang kamu butuhkan</div><h2>Diagnostik lengkap, tanpa ribet.</h2><p>Ambil keputusan berdasarkan data, bukan sekadar tampilan luar.</p></div><div class="cards"><article class="card"><div class="icon">⌕</div><h3>Scan Komponen</h3><p>Periksa CPU, RAM, penyimpanan, baterai, suhu, dan komponen penting lainnya.</p></article><article class="card"><div class="icon">◈</div><h3>Skor Kondisi</h3><p>Dapatkan skor kesehatan laptop yang mudah dipahami beserta rekomendasi pembelian.</p></article><article class="card"><div class="icon">✓</div><h3>Laporan Transparan</h3><p>Simpan dan bagikan hasil pemeriksaan agar transaksi lebih aman dan terpercaya.</p></article></div><section class="steps" id="cara"><h2>Semudah 4 langkah</h2><div class="step-grid"><div class="step"><div class="number">1</div><b>Masukkan data</b><p>Isi merek dan spesifikasi laptop.</p></div><div class="step"><div class="number">2</div><b>Jalankan scan</b><p>Ikuti panduan pemeriksaan.</p></div><div class="step"><div class="number">3</div><b>Lihat hasil</b><p>Pelajari skor komponen.</p></div><div class="step"><div class="number">4</div><b>Ambil keputusan</b><p>Beli dengan percaya diri.</p></div></div></section><section class="banner" id="mulai"><div><h2>Siap cek laptop incaranmu?</h2><p>Mulai diagnostik gratis dalam beberapa menit.</p></div><a class="button" href="#fitur">Mulai Sekarang →</a></section></div></main>
-	<footer><div class="container">© 2024 RIDWAN JagoNya Laptop Second — Jujur • Detail • Terpercaya</div></footer>
+
+<header>
+    <div class="header-inner">
+        <div class="brand">
+            RIDWAN JagoNya Laptop
+            <small>Second & Bergaransi Lama</small>
+        </div>
+
+        <div>
+            0822-2891-0007
+        </div>
+    </div>
+</header>
+
+<main>
+
+    <!-- PROGRESS -->
+
+    <div class="progress">
+
+        <div class="progress-item active" id="progress1">
+            <b>1</b>
+            <span>Unit</span>
+        </div>
+
+        <div class="progress-line"></div>
+
+        <div class="progress-item" id="progress2">
+            <b>2</b>
+            <span>Auto</span>
+        </div>
+
+        <div class="progress-line"></div>
+
+        <div class="progress-item" id="progress3">
+            <b>3</b>
+            <span>Manual</span>
+        </div>
+
+        <div class="progress-line"></div>
+
+        <div class="progress-item" id="progress4">
+            <b>4</b>
+            <span>Hasil</span>
+        </div>
+
+    </div>
+
+
+    <!-- STEP 1 -->
+
+    <section class="step active" id="step-unit">
+
+        <div class="hero">
+
+            <h1>🔍 CEK UNIT LAPTOP</h1>
+
+            <p>
+                Masukkan identitas unit sebelum memulai pemeriksaan.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>Identitas Unit</h2>
+
+            <div class="grid">
+
+                <div class="field">
+                    <label>Merek Laptop</label>
+                    <input id="brand" placeholder="Contoh: Dell">
+                </div>
+
+                <div class="field">
+                    <label>Model Laptop</label>
+                    <input id="model" placeholder="Contoh: Latitude 5300">
+                </div>
+
+                <div class="field">
+                    <label>Serial Number / Service Tag</label>
+                    <input id="serial" placeholder="Masukkan serial">
+                </div>
+
+                <div class="field">
+                    <label>Kode Unit Internal</label>
+                    <input id="unitCode" placeholder="Contoh: RD-LP-001">
+                </div>
+
+                <div class="field">
+                    <label>Processor Menurut Unit</label>
+                    <input id="processorInput" placeholder="Contoh: Intel Core i5">
+                </div>
+
+                <div class="field">
+                    <label>RAM Menurut Unit</label>
+                    <input id="ramInput" placeholder="Contoh: 16 GB">
+                </div>
+
+                <div class="field">
+                    <label>Storage Menurut Unit</label>
+                    <input id="storageInput" placeholder="Contoh: SSD 512 GB">
+                </div>
+
+                <div class="field">
+                    <label>Harga Jual</label>
+                    <input id="price" type="number" placeholder="Contoh: 3500000">
+                </div>
+
+                <div class="field">
+                    <label>Nama Pemeriksa</label>
+                    <input id="inspector" placeholder="Nama teknisi">
+                </div>
+
+            </div>
+
+            <div class="actions">
+
+                <button
+                    class="btn btn-primary btn-large"
+                    onclick="startAutoCheck()">
+                    🚀 MULAI PEMERIKSAAN
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- STEP 2 -->
+
+    <section class="step" id="step-auto">
+
+        <div class="hero">
+
+            <h1>⚡ AUTO CHECK</h1>
+
+            <p>
+                Sistem membaca informasi yang tersedia melalui browser.
+            </p>
+
+        </div>
+
+        <div class="test-grid" id="autoResults"></div>
+
+        <div class="actions">
+
+            <button
+                class="btn btn-secondary"
+                onclick="showStep('unit')">
+                ← Kembali
+            </button>
+
+            <button
+                class="btn btn-primary"
+                onclick="showStep('manual')">
+                Lanjut ke Manual →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- STEP 3 -->
+
+    <section class="step" id="step-manual">
+
+        <div class="hero">
+
+            <h1>🔧 MANUAL CHECK</h1>
+
+            <p>
+                Periksa komponen yang membutuhkan pengamatan langsung.
+            </p>
+
+        </div>
+
+
+        <!-- DISPLAY -->
+
+        <div class="card">
+
+            <h2>🖥️ Display / LCD</h2>
+
+            <div class="notice">
+                Tampilkan warna satu per satu dan periksa apakah terdapat
+                dead pixel, shadow, bleeding, garis atau bercak.
+            </div>
+
+            <div
+                id="screenTest"
+                class="color-test">
+            </div>
+
+            <div class="color-buttons">
+
+                <button onclick="setScreen('#ff0000')">
+                    MERAH
+                </button>
+
+                <button onclick="setScreen('#00ff00')">
+                    HIJAU
+                </button>
+
+                <button onclick="setScreen('#0000ff')">
+                    BIRU
+                </button>
+
+                <button onclick="setScreen('#ffffff')">
+                    PUTIH
+                </button>
+
+                <button onclick="setScreen('#000000')">
+                    HITAM
+                </button>
+
+                <button onclick="setScreen('#808080')">
+                    ABU
+                </button>
+
+            </div>
+
+            <div class="actions">
+
+                <button
+                    class="btn btn-success"
+                    onclick="setManual('display','NORMAL')">
+                    ✓ NORMAL
+                </button>
+
+                <button
+                    class="btn btn-danger"
+                    onclick="setManual('display','BERMASALAH')">
+                    ✕ BERMASALAH
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- KEYBOARD -->
+
+        <div class="card">
+
+            <h2>⌨️ Keyboard</h2>
+
+            <div class="notice">
+                Tekan semua tombol keyboard laptop satu per satu.
+                Tombol yang terdeteksi akan berubah hijau.
+            </div>
+
+            <div id="keyboard" class="keyboard"></div>
+
+            <p style="margin-top:15px;">
+                Tombol terdeteksi:
+                <strong id="keyCount">0</strong>
+            </p>
+
+            <div class="actions">
+
+                <button
+                    class="btn btn-success"
+                    onclick="setManual('keyboard','NORMAL')">
+                    ✓ KEYBOARD NORMAL
+                </button>
+
+                <button
+                    class="btn btn-danger"
+                    onclick="setManual('keyboard','BERMASALAH')">
+                    ✕ BERMASALAH
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- CAMERA -->
+
+        <div class="card">
+
+            <h2>📷 Kamera</h2>
+
+            <video
+                id="camera"
+                class="camera"
+                autoplay
+                playsinline>
+            </video>
+
+            <div class="actions">
+
+                <button
+                    class="btn btn-primary"
+                    onclick="startCamera()">
+                    AKTIFKAN KAMERA
+                </button>
+
+                <button
+                    class="btn btn-success"
+                    onclick="setManual('camera','NORMAL')">
+                    ✓ NORMAL
+                </button>
+
+                <button
+                    class="btn btn-danger"
+                    onclick="setManual('camera','BERMASALAH')">
+                    ✕ BERMASALAH
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- OTHER TESTS -->
+
+        <div class="card">
+
+            <h2>🔧 Pemeriksaan Komponen</h2>
+
+            <div class="test-grid">
+
+                <div class="test-card">
+                    <h3>🔊 Speaker</h3>
+                    <p>
+                        Uji speaker kiri dan kanan.
+                    </p>
+
+                    <button
+                        class="btn btn-primary"
+                        onclick="testAudio()">
+                        TEST AUDIO
+                    </button>
+
+                    <br>
+
+                    <button
+                        class="btn btn-success"
+                        onclick="setManual('speaker','NORMAL')">
+                        NORMAL
+                    </button>
+
+                    <button
+                        class="btn btn-danger"
+                        onclick="setManual('speaker','BERMASALAH')">
+                        MASALAH
+                    </button>
+                </div>
+
+
+                <div class="test-card">
+
+                    <h3>🖱️ Touchpad</h3>
+
+                    <p>
+                        Gerakkan pointer, klik kiri,
+                        klik kanan dan scroll.
+                    </p>
+
+                    <button
+                        class="btn btn-success"
+                        onclick="setManual('touchpad','NORMAL')">
+                        NORMAL
+                    </button>
+
+                    <button
+                        class="btn btn-danger"
+                        onclick="setManual('touchpad','BERMASALAH')">
+                        MASALAH
+                    </button>
+
+                </div>
+
+
+                <div class="test-card">
+
+                    <h3>🔌 USB</h3>
+
+                    <p>
+                        Uji seluruh port USB secara fisik.
+                    </p>
+
+                    <button
+                        class="btn btn-success"
+                        onclick="setManual('usb','NORMAL')">
+                        NORMAL
+                    </button>
+
+                    <button
+                        class="btn btn-danger"
+                        onclick="setManual('usb','BERMASALAH')">
+                        MASALAH
+                    </button>
+
+                </div>
+
+
+                <div class="test-card">
+
+                    <h3>🔋 Charger</h3>
+
+                    <p>
+                        Periksa charging, konektor
+                        dan adaptor.
+                    </p>
+
+                    <button
+                        class="btn btn-success"
+                        onclick="setManual('charger','NORMAL')">
+                        NORMAL
+                    </button>
+
+                    <button
+                        class="btn btn-danger"
+                        onclick="setManual('charger','BERMASALAH')">
+                        MASALAH
+                    </button>
+
+                </div>
+
+
+                <div class="test-card">
+
+                    <h3>💾 Storage</h3>
+
+                    <p>
+                        SMART / bad sector harus
+                        diperiksa menggunakan tool desktop.
+                    </p>
+
+                    <button
+                        class="btn btn-success"
+                        onclick="setManual('storage','NORMAL')">
+                        NORMAL
+                    </button>
+
+                    <button
+                        class="btn btn-danger"
+                        onclick="setManual('storage','BERMASALAH')">
+                        MASALAH
+                    </button>
+
+                </div>
+
+
+                <div class="test-card">
+
+                    <h3>🧱 Kondisi Fisik</h3>
+
+                    <p>
+                        Cek casing, engsel, baut,
+                        LCD, port dan bekas benturan.
+                    </p>
+
+                    <button
+                        class="btn btn-success"
+                        onclick="setManual('physical','NORMAL')">
+                        NORMAL
+                    </button>
+
+                    <button
+                        class="btn btn-danger"
+                        onclick="setManual('physical','BERMASALAH')">
+                        MASALAH
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="actions">
+
+            <button
+                class="btn btn-secondary"
+                onclick="showStep('auto')">
+                ← Kembali
+            </button>
+
+            <button
+                class="btn btn-primary"
+                onclick="showResult()">
+                LIHAT HASIL →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- RESULT -->
+
+    <section class="step" id="step-result">
+
+        <div class="hero">
+
+            <h1>📋 HASIL PEMERIKSAAN</h1>
+
+            <p>
+                Laporan pemeriksaan unit laptop.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>Identitas Unit</h2>
+
+            <div id="unitResult"></div>
+
+        </div>
+
+
+        <div class="summary-grid">
+
+            <div class="summary-box">
+                <strong id="normalCount">0</strong>
+                NORMAL
+            </div>
+
+            <div class="summary-box">
+                <strong id="problemCount">0</strong>
+                BERMASALAH
+            </div>
+
+            <div class="summary-box">
+                <strong id="manualCount">0</strong>
+                MANUAL
+            </div>
+
+            <div class="summary-box">
+                <strong id="unsupportedCount">0</strong>
+                TIDAK DIDUKUNG
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>Detail Pemeriksaan</h2>
+
+            <div id="finalResults"></div>
+
+        </div>
+
+
+        <div class="actions">
+
+            <button
+                class="btn btn-secondary"
+                onclick="showStep('manual')">
+                ← Kembali
+            </button>
+
+            <button
+                class="btn btn-primary"
+                onclick="window.print()">
+                🖨️ CETAK HASIL
+            </button>
+
+            <button
+                class="btn btn-danger"
+                onclick="resetAll()">
+                PEMERIKSAAN BARU
+            </button>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    RIDWAN JagoNya Laptop Second DAN BERGARANSI LAMA<br>
+    Surabaya • Sidoarjo dan sekitarnya<br>
+    WhatsApp 0822-2891-0007
+
+</footer>
+
+
+<script>
+
+const state = {
+
+    unit:{},
+
+    results:{
+        display:"MANUAL",
+        keyboard:"MANUAL",
+        camera:"MANUAL",
+        speaker:"MANUAL",
+        touchpad:"MANUAL",
+        usb:"MANUAL",
+        charger:"MANUAL",
+        storage:"MANUAL",
+        physical:"MANUAL"
+    },
+
+    auto:{}
+
+};
+
+
+function saveState(){
+
+    sessionStorage.setItem(
+        "ridwanLaptopCheck",
+        JSON.stringify(state)
+    );
+
+}
+
+
+function showStep(step){
+
+    document.querySelectorAll(".step")
+        .forEach(el=>el.classList.remove("active"));
+
+    document
+        .getElementById("step-"+step)
+        .classList.add("active");
+
+    updateProgress(step);
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+function updateProgress(step){
+
+    const map = {
+        unit:1,
+        auto:2,
+        manual:3,
+        result:4
+    };
+
+    const current = map[step];
+
+    for(let i=1;i<=4;i++){
+
+        const el =
+            document.getElementById("progress"+i);
+
+        el.classList.remove(
+            "active",
+            "done"
+        );
+
+        if(i < current)
+            el.classList.add("done");
+
+        if(i === current)
+            el.classList.add("active");
+
+    }
+
+}
+
+
+function startAutoCheck(){
+
+    state.unit = {
+
+        brand:
+            document.getElementById("brand").value,
+
+        model:
+            document.getElementById("model").value,
+
+        serial:
+            document.getElementById("serial").value,
+
+        unitCode:
+            document.getElementById("unitCode").value,
+
+        processor:
+            document.getElementById("processorInput").value,
+
+        ram:
+            document.getElementById("ramInput").value,
+
+        storage:
+            document.getElementById("storageInput").value,
+
+        price:
+            document.getElementById("price").value,
+
+        inspector:
+            document.getElementById("inspector").value
+
+    };
+
+    runAutoCheck();
+
+    saveState();
+
+    showStep("auto");
+
+}
+
+
+function autoCard(name,value,status){
+
+    return `
+
+        <div class="test-card">
+
+            <h3>${name}</h3>
+
+            <p>${value}</p>
+
+            <span class="status status-${status.class}">
+                ${status.text}
+            </span>
+
+        </div>
+
+    `;
+
+}
+
+
+async function runAutoCheck(){
+
+    const container =
+        document.getElementById("autoResults");
+
+    container.innerHTML = "";
+
+    // CPU
+
+    const cpu =
+        navigator.hardwareConcurrency;
+
+    if(cpu){
+
+        state.auto.cpu =
+            `${cpu} logical processor`;
+
+        container.innerHTML += autoCard(
+            "🧠 CPU / THREAD",
+            `${cpu} logical processor`,
+            {
+                class:"normal",
+                text:"TERDETEKSI"
+            }
+        );
+
+    }else{
+
+        state.auto.cpu = "Tidak tersedia";
+
+        container.innerHTML += autoCard(
+            "🧠 CPU / THREAD",
+            "Browser tidak memberikan informasi",
+            {
+                class:"unsupported",
+                text:"TIDAK DIDUKUNG"
+            }
+        );
+
+    }
+
+
+    // RAM
+
+    if(navigator.deviceMemory){
+
+        const ram =
+            navigator.deviceMemory + " GB";
+
+        state.auto.ram = ram;
+
+        container.innerHTML += autoCard(
+            "💾 PERKIRAAN RAM",
+            ram,
+            {
+                class:"normal",
+                text:"TERSEDIA"
+            }
+        );
+
+    }else{
+
+        state.auto.ram =
+            "Tidak tersedia";
+
+        container.innerHTML += autoCard(
+            "💾 PERKIRAAN RAM",
+            "Browser tidak memberikan informasi RAM",
+            {
+                class:"manual",
+                text:"PERLU CEK MANUAL"
+            }
+        );
+
+    }
+
+
+    // OS / Browser
+
+    state.auto.browser =
+        navigator.userAgent;
+
+    container.innerHTML += autoCard(
+        "🌐 BROWSER",
+        navigator.userAgent,
+        {
+            class:"normal",
+            text:"TERDETEKSI"
+        }
+    );
+
+
+    // Screen
+
+    const screenInfo =
+        `${screen.width} × ${screen.height}`;
+
+    state.auto.screen =
+        screenInfo;
+
+    container.innerHTML += autoCard(
+        "🖥️ RESOLUSI LAYAR",
+        screenInfo,
+        {
+            class:"normal",
+            text:"TERDETEKSI"
+        }
+    );
+
+
+    // Battery
+
+    if("getBattery" in navigator){
+
+        try{
+
+            const battery =
+                await navigator.getBattery();
+
+            const percent =
+                Math.round(
+                    battery.level * 100
+                );
+
+            state.auto.battery =
+                percent + "%";
+
+            container.innerHTML += autoCard(
+                "🔋 BATERAI",
+                `${percent}% • ${
+                    battery.charging
+                    ? "Charging"
+                    : "Tidak Charging"
+                }`,
+                {
+                    class:"normal",
+                    text:"DATA TERSEDIA"
+                }
+            );
+
+        }catch(error){
+
+            container.innerHTML += autoCard(
+                "🔋 BATERAI",
+                "Battery API tidak dapat digunakan",
+                {
+                    class:"manual",
+                    text:"PERLU CEK MANUAL"
+                }
+            );
+
+        }
+
+    }else{
+
+        container.innerHTML += autoCard(
+            "🔋 BATERAI",
+            "Browser tidak mendukung Battery API",
+            {
+                class:"manual",
+                text:"PERLU CEK MANUAL"
+            }
+        );
+
+    }
+
+
+    // Camera
+
+    if(
+        navigator.mediaDevices &&
+        navigator.mediaDevices.getUserMedia
+    ){
+
+        container.innerHTML += autoCard(
+            "📷 KAMERA",
+            "API kamera tersedia",
+            {
+                class:"manual",
+                text:"PERLU KONFIRMASI"
+            }
+        );
+
+    }else{
+
+        container.innerHTML += autoCard(
+            "📷 KAMERA",
+            "API kamera tidak tersedia",
+            {
+                class:"unsupported",
+                text:"TIDAK DIDUKUNG"
+            }
+        );
+
+    }
+
+
+    // Online
+
+    container.innerHTML += autoCard(
+        "🌐 KONEKSI",
+        navigator.onLine
+            ? "Online"
+            : "Offline",
+        {
+            class:
+                navigator.onLine
+                ? "normal"
+                : "manual",
+
+            text:
+                navigator.onLine
+                ? "ONLINE"
+                : "OFFLINE"
+        }
+    );
+
+    saveState();
+
+}
+
+
+function setManual(key,value){
+
+    state.results[key] =
+        value === "NORMAL"
+        ? "NORMAL"
+        : "BERMASALAH";
+
+    saveState();
+
+    alert(
+        key.toUpperCase() +
+        ": " +
+        state.results[key]
+    );
+
+}
+
+
+function setScreen(color){
+
+    document
+        .getElementById("screenTest")
+        .style.background = color;
+
+}
+
+
+async function startCamera(){
+
+    const video =
+        document.getElementById("camera");
+
+    try{
+
+        const stream =
+            await navigator.mediaDevices
+            .getUserMedia({
+                video:true,
+                audio:false
+            });
+
+        video.srcObject = stream;
+
+    }catch(error){
+
+        alert(
+            "Kamera tidak dapat diakses. " +
+            "Pastikan izin kamera diberikan."
+        );
+
+    }
+
+}
+
+
+function testAudio(){
+
+    const ctx =
+        new (
+            window.AudioContext ||
+            window.webkitAudioContext
+        )();
+
+    const osc =
+        ctx.createOscillator();
+
+    const gain =
+        ctx.createGain();
+
+    osc.frequency.value = 440;
+
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+
+    osc.start();
+
+    setTimeout(()=>{
+
+        osc.stop();
+        ctx.close();
+
+    },700);
+
+}
+
+
+const keyboardKeys = [
+
+"ESC","F1","F2","F3","F4","F5","F6","F7","F8","F9","F10","F11","F12",
+
+"`","1","2","3","4","5","6","7","8","9","0","-","=",
+
+"Q","W","E","R","T","Y","U","I","O","P",
+
+"A","S","D","F","G","H","J","K","L",
+
+"Z","X","C","V","B","N","M",
+
+"SPACE",
+
+"CTRL","ALT","SHIFT","TAB","CAPS","ENTER","BACKSPACE",
+
+"LEFT","UP","DOWN","RIGHT"
+
+];
+
+
+const keyMap = {};
+
+keyboardKeys.forEach(key=>{
+
+    const div =
+        document.createElement("div");
+
+    div.className = "key";
+
+    div.innerText = key;
+
+    div.dataset.key = key;
+
+    document
+        .getElementById("keyboard")
+        .appendChild(div);
+
+});
+
+
+document.addEventListener(
+    "keydown",
+    event=>{
+
+        let key =
+            event.key.toUpperCase();
+
+        if(event.code === "Space")
+            key = "SPACE";
+
+        if(event.code === "ArrowUp")
+            key = "UP";
+
+        if(event.code === "ArrowDown")
+            key = "DOWN";
+
+        if(event.code === "ArrowLeft")
+            key = "LEFT";
+
+        if(event.code === "ArrowRight")
+            key = "RIGHT";
+
+        const elements =
+            document.querySelectorAll(
+                ".key"
+            );
+
+        elements.forEach(el=>{
+
+            if(
+                el.dataset.key === key ||
+                el.dataset.key === event.code
+            ){
+
+                el.classList.add("active");
+
+            }
+
+        });
+
+        const count =
+            document.querySelectorAll(
+                ".key.active"
+            ).length;
+
+        document.getElementById(
+            "keyCount"
+        ).innerText = count;
+
+    }
+);
+
+
+function showResult(){
+
+    const unit =
+        state.unit;
+
+    document.getElementById(
+        "unitResult"
+    ).innerHTML = `
+
+        <div class="result-row">
+            <span class="result-name">Merek</span>
+            <span class="result-value">
+                ${unit.brand || "-"}
+            </span>
+        </div>
+
+        <div class="result-row">
+            <span class="result-name">Model</span>
+            <span class="result-value">
+                ${unit.model || "-"}
+            </span>
+        </div>
+
+        <div class="result-row">
+            <span class="result-name">Serial</span>
+            <span class="result-value">
+                ${unit.serial || "-"}
+            </span>
+        </div>
+
+        <div class="result-row">
+            <span class="result-name">Kode Unit</span>
+            <span class="result-value">
+                ${unit.unitCode || "-"}
+            </span>
+        </div>
+
+        <div class="result-row">
+            <span class="result-name">Pemeriksa</span>
+            <span class="result-value">
+                ${unit.inspector || "-"}
+            </span>
+        </div>
+
+    `;
+
+
+    const all = {
+
+        CPU:
+            state.auto.cpu || "MANUAL",
+
+        RAM:
+            state.auto.ram || "MANUAL",
+
+        "Layar":
+            state.results.display,
+
+        Keyboard:
+            state.results.keyboard,
+
+        Kamera:
+            state.results.camera,
+
+        Speaker:
+            state.results.speaker,
+
+        Touchpad:
+            state.results.touchpad,
+
+        USB:
+            state.results.usb,
+
+        Charger:
+            state.results.charger,
+
+        Storage:
+            state.results.storage,
+
+        Fisik:
+            state.results.physical
+
+    };
+
+
+    let normal = 0;
+    let problem = 0;
+    let manual = 0;
+
+    let html = "";
+
+    Object.entries(all)
+    .forEach(([name,status])=>{
+
+        let css =
+            "status-manual";
+
+        if(status === "NORMAL"){
+
+            css = "status-normal";
+            normal++;
+
+        }else if(
+            status === "BERMASALAH"
+        ){
+
+            css = "status-error";
+            problem++;
+
+        }else{
+
+            manual++;
+
+        }
+
+        html += `
+
+            <div class="result-row">
+
+                <span class="result-name">
+                    ${name}
+                </span>
+
+                <span class="status ${css}">
+                    ${status}
+                </span>
+
+            </div>
+
+        `;
+
+    });
+
+
+    document.getElementById(
+        "finalResults"
+    ).innerHTML = html;
+
+
+    document.getElementById(
+        "normalCount"
+    ).innerText = normal;
+
+    document.getElementById(
+        "problemCount"
+    ).innerText = problem;
+
+    document.getElementById(
+        "manualCount"
+    ).innerText = manual;
+
+    document.getElementById(
+        "unsupportedCount"
+    ).innerText = 0;
+
+
+    saveState();
+
+    showStep("result");
+
+}
+
+
+function resetAll(){
+
+    if(
+        !confirm(
+            "Mulai pemeriksaan unit baru?"
+        )
+    )
+        return;
+
+    sessionStorage.removeItem(
+        "ridwanLaptopCheck"
+    );
+
+    location.reload();
+
+}
+
+</script>
+
 </body>
 </html>
